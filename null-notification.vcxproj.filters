@@ -4,5 +4,48 @@
     <Filter Include="src">
       <UniqueIdentifier>{d11addc5-089b-4237-a3dd-c21f8f81dcf1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\interfaces">
+      <UniqueIdentifier>{b2174a0f-1518-4e3c-8b97-5479872d70d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\notifications">
+      <UniqueIdentifier>{1fd7d5ed-c9e2-4ac1-8a77-44be5da80dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\notifications\horizontal">
+      <UniqueIdentifier>{0513c9bc-0497-4c22-8b36-cbe148140c9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\notifications\vertical">
+      <UniqueIdentifier>{8debeb26-4785-4cca-8d55-9f6316a03809}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\null-notification.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\interfaces\default-animation.h">
+      <Filter>src\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\interfaces\default-notification.h">
+      <Filter>src\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\interfaces\notification.h">
+      <Filter>src\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\notifications\horizontal\horizontal.h">
+      <Filter>src\notifications\horizontal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\notifications\vertical\vertical.h">
+      <Filter>src\notifications\vertical</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\null-notification.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\notifications\horizontal\horizontal.cpp">
+      <Filter>src\notifications\horizontal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\notifications\vertical\vertical.cpp">
+      <Filter>src\notifications\vertical</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
