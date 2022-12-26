@@ -18,7 +18,7 @@ namespace null::notification {
 
 	public:
 		c_vertical() { }
-		c_vertical(std::string_view _name, e_layout _layout, const std::chrono::seconds& show_duration, const color_t<int>& remaining_time_line_color, const render::multicolor_text_t<std::string>& _prefix, const render::multicolor_text_t<std::string>& _body) : i_notification{ _name, _layout, show_duration }, i_default_notification{ remaining_time_line_color, _prefix, _body } { }
+		c_vertical(const std::string_view& _name, const e_layout& _layout, const std::chrono::seconds& show_duration, const color_t<int>& remaining_time_line_color, const render::multicolor_text_t<std::string>& _prefix, const render::multicolor_text_t<std::string>& _body) : i_notification{ _name, _layout, show_duration }, i_default_notification{ remaining_time_line_color, _prefix, _body } { }
 
 	public:
 		virtual void update() override;

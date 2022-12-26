@@ -20,7 +20,7 @@ namespace null::notification {
 		render::foreground.draw_rect_filled(pos, pos + size, { style_t::background_color, style_t::background_color.a() * animation.alpha }, style_t::rounding);
 
 		vec2_t remaining_time_line_offset{ style_t::text_offset + vec2_t{ 0.f, prefix_size.y + style_t::body_offset } };
-		rect_t remaining_time_line_rect{ rect_t{ pos + remaining_time_line_offset}.from_min(vec2_t{ size.x - style_t::text_offset.x * 2, style_t::remaining_time_line_size }) };
+		rect_t remaining_time_line_rect{ pos + remaining_time_line_offset, vec2_t{ size.x - style_t::text_offset.x * 2, style_t::remaining_time_line_size }, rect_t::top | rect_t::left };
 		render::foreground.draw_rect_filled(remaining_time_line_rect, { style.remaining_time_line_color, 0.2f * animation.alpha });
 		render::foreground.draw_rect_filled(remaining_time_line_rect - rect_t{ vec2_t{ }, vec2_t{ remaining_time_line_rect.size().x * std::min(1.f - animation.life_time_pocent, 1.f), 0.f } }, { style.remaining_time_line_color, animation.alpha });
 

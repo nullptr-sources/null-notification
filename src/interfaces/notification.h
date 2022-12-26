@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 #include <null-render.h>
 
 namespace null::notification {
@@ -39,7 +40,7 @@ namespace null::notification {
 		public:
 			static inline std::map<e_layout, std::vector<std::shared_ptr<i_notification>>> notifications{ };
 
-			static i_notification* find(std::string_view name, e_layout layout) {
+			static i_notification* find(const std::string_view& name, const e_layout& layout) {
 				if(name.empty()) return nullptr;
 				if(auto finded{ std::ranges::find_if(notifications[layout], [&](std::shared_ptr<i_notification>& notification) { return notification->name == name; }) }; finded != notifications[layout].end())
 					return (*finded).get();
@@ -63,7 +64,7 @@ namespace null::notification {
 
 		public:
 			i_notification() { }
-			i_notification(std::string_view _name, e_layout _layout, const std::chrono::milliseconds& _show_duration) : name{ _name }, layout{ _layout }, show_duration{ _show_duration }, created_time{ std::chrono::steady_clock::now() } { }
+			i_notification(const std::string_view& _name, const e_layout& _layout, const std::chrono::milliseconds& _show_duration) : name{ _name }, layout{ _layout }, show_duration{ _show_duration }, created_time{ std::chrono::steady_clock::now() } { }
 
 		public:
 			template <typename self_t>
@@ -88,8 +89,8 @@ namespace null::notification {
 			void copy_from(const i_notification& notification) { update(); }
 
 		public: //@note: builder functions
-			template <typename self_t> auto set_name(this self_t&& self, std::string_view _name) { self.name = _name; return self; }
-			template <typename self_t> auto set_layout(this self_t&& self, e_layout _layout) { self.layout = _layout; return self; }
+			template <typename self_t> auto set_name(this self_t&& self, const std::string_view& _name) { self.name = _name; return self; }
+			template <typename self_t> auto set_layout(this self_t&& self, const e_layout& _layout) { self.layout = _layout; return self; }
 			template <typename self_t> auto set_show_duration(this self_t&& self, const std::chrono::seconds& _show_duration) { self.show_duration = _show_duration; return self; }
 		};
 	}
